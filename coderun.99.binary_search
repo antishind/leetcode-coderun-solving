@@ -1,0 +1,19 @@
+n, k = [int(x) for x in input().split()]
+list_n = [int(x) for x in input().split()]
+list_m = [int(x) for x in input().split()]
+def binary_search(nums, target):
+    low = 0
+    high = len(nums) - 1
+   
+    while low <= high:
+        mid = (low + high) // 2
+        guess = nums[mid]
+        if guess == target:
+            return "YES"
+        elif guess < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return "NO"
+for x in list_m:
+    print(binary_search(list_n, x))
